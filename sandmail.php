@@ -30,13 +30,13 @@ $mail->addAddress('ilnur9lite@gmail.com');     // Кому будет уходи
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
-$mail->Subject = 'Заявка с тестового сайта';
-$mail->Body    = '' .$name . ' оставил заявку, его телефон ' .$phone. '<br>Почта этого пользователя: ' .$email;
+$mail->Subject = 'Заявка с сайта bars';
+$mail->Body    = '' .$fname .$lname . ' оставил заявку, его тема: ' .$them . '<br>Почта этого пользователя: ' .$email . 'текст обращения' .$message;
 $mail->AltBody = '';
 
 if(!$mail->send()) {
     echo 'Error';
 } else {
-    header('location: thank-you.html');
+    header('location: index.html');
 }
 ?>
